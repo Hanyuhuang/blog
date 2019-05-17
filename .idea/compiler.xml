@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="blog-search" />
+        <module name="blog-upload" />
+        <module name="blog-user" />
+        <module name="bloggateway" />
+        <module name="bloglistener" />
+        <module name="blogregistry" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blogarticleservice" target="1.8" />
+      <module name="blogmessageservice" target="1.8" />
+      <module name="blogservice" target="1.8" />
+      <module name="bloguserservice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blog-search" options="-parameters" />
+      <module name="blog-upload" options="-parameters" />
+      <module name="blog-user" options="-parameters" />
+      <module name="blogarticleservice" options="-parameters" />
+      <module name="blogcommon" options="" />
+      <module name="bloggateway" options="-parameters" />
+      <module name="bloglistener" options="-parameters" />
+      <module name="blogmessageservice" options="-parameters" />
+      <module name="blogregistry" options="-parameters" />
+      <module name="blogservice" options="-parameters" />
+      <module name="bloguserservice" options="-parameters" />
+    </option>
+  </component>
+</project>

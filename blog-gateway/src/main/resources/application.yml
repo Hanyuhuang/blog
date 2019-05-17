@@ -1,0 +1,17 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: blog-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+zuul:
+  prefix:  # 添加路由前缀
+  retryable: true
