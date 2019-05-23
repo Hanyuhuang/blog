@@ -13,5 +13,9 @@ eureka:
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
 zuul:
-  prefix:  # 添加路由前缀
   retryable: true
+  ignored-services:
+    - upload-service # 忽略upload-service服务
+  routes:
+    article-service: /article/** # 将商品微服务映射到/item/**
+    user-service: /user/**

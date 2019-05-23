@@ -3,6 +3,7 @@ package com.hyh.pojo.Vo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +12,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PageResult<T> implements Serializable {
-    private Long total;
-    private Integer totalPage;
+    private long total;
+    private int totalPage;
     private List<T> items;
+
+    public PageResult(List<T> items) {
+        this.items = items;
+    }
 }

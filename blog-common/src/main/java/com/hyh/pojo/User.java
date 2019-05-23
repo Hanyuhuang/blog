@@ -17,6 +17,7 @@ public class User implements Serializable {
     private Long id;          // id
     private String name;      // 用户名
     private String password;  // 密码
+    private String image;     // 头像
     private Date birthday;    // 生日
     private String sex;       // 性别
     private String phone;     // 手机号

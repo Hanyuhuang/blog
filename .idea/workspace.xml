@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e501ab35-16f2-4986-a781-edae6f134b30" name="Default Changelist" comment="" />
+    <list default="true" id="e501ab35-16f2-4986-a781-edae6f134b30" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/ListenerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/ListenerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/BlogRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/registry/RegistryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-upload/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/UserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/blog-registry/target/" />
     <ignored path="$PROJECT_DIR$/blog-gateway/target/" />
@@ -17,6 +35,7 @@
     <ignored path="$PROJECT_DIR$/blog-user/target/" />
     <ignored path="$PROJECT_DIR$/blog-mail/target/" />
     <ignored path="$PROJECT_DIR$/blog-listener/target/" />
+    <ignored path="$PROJECT_DIR$/blog-article/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+            <state relative-caret-position="17">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,10 +60,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/CommentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1181">
-              <caret line="34" column="88" lean-forward="true" selection-start-line="34" selection-start-column="88" selection-end-line="34" selection-end-column="88" />
+            <state relative-caret-position="204">
+              <caret line="20" column="77" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,10 +72,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper/UserMapper.java">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/CommentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="102">
+              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/CommentServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -71,53 +111,63 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blog-registry/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/BlogRegistry.java" />
-        <option value="$PROJECT_DIR$/blog-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/BlogGateway.java" />
-        <option value="$PROJECT_DIR$/blog-search/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-common/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/UserService.java" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/service/UserService.java" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/service/UserService.java" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/user/UserService.java" />
-        <option value="$PROJECT_DIR$/blog-service/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/user/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/City.java" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/CityVo.java" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper/CityMapper.java" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/CityService.java" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/CityController.java" />
-        <option value="$PROJECT_DIR$/blog-registry/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/config/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/blog-mail/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-mail/src/main/java/com/hyh/mail/MailService.java" />
-        <option value="$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/blog-mail/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/blog-mail/src/main/java/com/hyh/mail/controller/MailController.java" />
-        <option value="$PROJECT_DIR$/blog-mail/src/main/java/com/hyh/mail/service/MailService.java" />
         <option value="$PROJECT_DIR$/blog-mail/src/main/java/com/hyh/mail/listener/MailListener.java" />
         <option value="$PROJECT_DIR$/blog-listener/pom.xml" />
         <option value="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/CityServiceImpl.java" />
         <option value="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/listener/MailListener.java" />
-        <option value="$PROJECT_DIR$/blog-user/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-user/pom.xml" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java" />
-        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/blog-user/pom.xml" />
+        <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/UserService.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/ArticleService.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Comment.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Follow.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Reply.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Star.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/View.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Article.java" />
+        <option value="$PROJECT_DIR$/blog-upload/pom.xml" />
+        <option value="$PROJECT_DIR$/blog-upload/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/registry/RegistryApplication.java" />
+        <option value="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/UploadApplication.java" />
+        <option value="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/config/UploadConfig.java" />
+        <option value="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java" />
+        <option value="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ViewMapper.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/StarMapper.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/FollowMapper.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ArticleVoMapper.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java" />
+        <option value="$PROJECT_DIR$/blog-article/pom.xml" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/ArticleApplication.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java" />
+        <option value="$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/blog-user/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/client/UserClient.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/ArticleService.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ReplyMapper.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/ArticleVo.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/CommentVo.java" />
+        <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/ReplyVo.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ArticleController.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -167,73 +217,17 @@
     <option name="width" value="1440" />
     <option name="height" value="801" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,7 +238,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558101975610" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558490182871" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -257,11 +251,11 @@
       <recent name="com.hyh.user.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blog-upload/src/main/java" />
+      <recent name="$PROJECT_DIR$/blog-upload/src/main/resources" />
+      <recent name="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo" />
+      <recent name="$PROJECT_DIR$/blog-article/src/main/resources" />
       <recent name="$PROJECT_DIR$/blog-mail/src/main/resources" />
-      <recent name="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user" />
-      <recent name="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl" />
-      <recent name="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service" />
-      <recent name="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -276,7 +270,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserService">
+  <component name="RunManager" selected="Spring Boot.UploadApplication">
+    <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="blogarticle" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyh.article.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.article.ArticleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BlogGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="bloggateway" />
       <extension name="coverage">
@@ -290,33 +297,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogRegistry" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="blogregistry" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hyh.*" />
+          <option name="PATTERN" value="com.hyh.registry.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.BlogRegistry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.registry.RegistryApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListenerService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="bloglistener" />
+    <configuration name="UploadApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="blog-upload" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hyh.mail.*" />
+          <option name="PATTERN" value="com.hyh.upload.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.mail.ListenerService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.upload.UploadApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="blog-user" />
       <extension name="coverage">
         <pattern>
@@ -324,22 +331,25 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.user.UserService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hyh.user.UserApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.RegistryApplication" />
+      <item itemvalue="Spring Boot.UserApplication" />
+      <item itemvalue="Spring Boot.UploadApplication" />
+      <item itemvalue="Spring Boot.ArticleApplication" />
       <item itemvalue="Spring Boot.BlogGateway" />
-      <item itemvalue="Spring Boot.BlogRegistry" />
-      <item itemvalue="Spring Boot.UserService" />
-      <item itemvalue="Spring Boot.ListenerService" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.UserService" />
-        <item itemvalue="Spring Boot.ListenerService" />
-        <item itemvalue="Spring Boot.BlogRegistry" />
+        <item itemvalue="Spring Boot.UploadApplication" />
+        <item itemvalue="Spring Boot.ArticleApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.RegistryApplication" />
         <item itemvalue="Spring Boot.BlogGateway" />
       </list>
     </recent_temporary>
@@ -358,19 +368,27 @@
       <workItem from="1557997104941" duration="5827000" />
       <workItem from="1558015088062" duration="2681000" />
       <workItem from="1558018571165" duration="280000" />
-      <workItem from="1558071574098" duration="18345000" />
+      <workItem from="1558071574098" duration="19237000" />
+      <workItem from="1558155210597" duration="9638000" />
+      <workItem from="1558268717792" duration="114000" />
+      <workItem from="1558270166305" duration="3284000" />
+      <workItem from="1558335852627" duration="7747000" />
+      <workItem from="1558353958557" duration="5878000" />
+      <workItem from="1558362332108" duration="1731000" />
+      <workItem from="1558396770521" duration="6903000" />
+      <workItem from="1558443141841" duration="4637000" />
+      <workItem from="1558483236316" duration="3568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28784000" />
+    <option name="totallyTimeSpent" value="73176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.25679544" />
-      <window_info id="Structure" order="1" sideWeight="0.5023474" side_tool="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49506348" visible="true" weight="0.2932761" />
+      <window_info id="Structure" order="1" sideWeight="0.5049365" side_tool="true" weight="0.27825466" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -379,7 +397,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32863188" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32863188" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32863188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,180 +427,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/BlogGateway.java">
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/BlogRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-registry/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-message-service/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/resources/application.yml" />
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/mapper/UserMapper.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-article-service/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/controller/UserController.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/blog-service/blog-user-service/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/blog-service/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-core/5.0.5.RELEASE/spring-core-5.0.5.RELEASE.jar!/org/springframework/util/DigestUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestParam.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/City.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper/CityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="91" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-registry/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/ListenerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/data/spring-data-redis/2.0.6.RELEASE/spring-data-redis-2.0.6.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="771" column="38" selection-start-line="771" selection-start-column="38" selection-end-line="771" selection-end-column="38" />
-          <folding>
-            <element signature="e#27929#27930#0" expanded="true" />
-            <element signature="e#27994#27995#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-mail/src/main/java/com/hyh/mail/controller/MailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/service/MailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="39" column="5" selection-start-line="15" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" selection-start-line="12" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/CityVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        <state relative-caret-position="170">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -591,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/CityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="-220">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -609,160 +457,402 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestBody.class">
+    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/blog-upload/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="340">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/leyou/upload/config/GlobalCorsConfig.java" />
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/leyou/upload/controller/UploadController.java" />
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller.java" />
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/UploadController.java" />
+    <entry file="file://$PROJECT_DIR$/blog-registry/src/main/java/com/hyh/registry/RegistryApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/com/alibaba/fastjson/1.2.54/fastjson-1.2.54.jar!/com/alibaba/fastjson/JSON.class">
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="332" column="24" selection-start-line="332" selection-start-column="24" selection-end-line="332" selection-end-column="24" />
-          <folding>
-            <element signature="e#12939#12940#0" expanded="true" />
-            <element signature="e#12986#12987#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/config/UploadConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="569" selection-start-line="569" selection-end-line="569" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="483" selection-start-line="483" selection-end-line="483" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-webmvc/5.0.5.RELEASE/spring-webmvc-5.0.5.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="421" selection-start-line="421" selection-end-line="421" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/config/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="19" column="88" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/mail/listener/MailListener.java">
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="359">
+          <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/UploadApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-user/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="70" column="20" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/CityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="314">
+          <caret line="29" column="21" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1181">
-          <caret line="34" column="88" lean-forward="true" selection-start-line="34" selection-start-column="88" selection-end-line="34" selection-end-column="88" />
+        <state relative-caret-position="-15">
+          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/mapper/UserMapper.java">
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/StarMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ViewMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ArticleVoMapper.java" />
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/com/github/pagehelper/pagehelper/5.1.2/pagehelper-5.1.2.jar!/com/github/pagehelper/Page.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/FollowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-beans/5.0.5.RELEASE/spring-beans-5.0.5.RELEASE.jar!/org/springframework/beans/BeanUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="343" column="24" selection-start-line="343" selection-start-column="24" selection-end-line="343" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/projectlombok/lombok/1.16.20/lombok-1.16.20.jar!/lombok/RequiredArgsConstructor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/client.java" />
+    <entry file="file://$PROJECT_DIR$/blog-article/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/ArticleApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/PageResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/io/github/openfeign/feign-core/9.5.1/feign-core-9.5.1.jar!/feign/FeignException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/http/HttpEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/MyApplication/maven/repository/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE.jar!/org/springframework/http/ResponseEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-user/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/ReplyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="56" lean-forward="true" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Reply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/CommentVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/ReplyVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/ArticleVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/client/UserClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+        <state relative-caret-position="17">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="77" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="54" column="39" lean-forward="true" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -786,6 +876,18 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>blog</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -800,6 +902,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

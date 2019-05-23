@@ -10,10 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hyh</groupId>
-    <artifactId>blog-user</artifactId>
+    <artifactId>blog-article</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
+        <!-- feign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <!-- 支持发送邮件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -86,5 +91,4 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 </project>

@@ -15,6 +15,7 @@
         <module>blog-upload</module>
         <module>blog-user</module>
         <module>blog-listener</module>
+        <module>blog-article</module>
     </modules>
 
     <packaging>pom</packaging>

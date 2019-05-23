@@ -1,22 +1,12 @@
 server:
-  port: 8081
-  max-http-header-size: 20480
-
+  port: 8091
 spring:
   application:
-    name: user-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/blog
-    username: root
-    password: 980709
-    hikari:
-      maximum-pool-size: 30
-      minimum-idle: 10
-  redis:
-    host: 192.168.25.128
-  rabbitmq:
-    host: 127.0.0.1
-
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 5MB # 限制文件上传的大小
+# Eureka
 eureka:
   client:
     service-url:
@@ -27,3 +17,12 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
+
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image: # 缩略图
+    width: 60
+    height: 60
+  tracker-list: # tracker地址
+    - 192.168.25.133:22122

@@ -10,6 +10,7 @@
         <module name="blog-search" />
         <module name="blog-upload" />
         <module name="blog-user" />
+        <module name="blogarticle" />
         <module name="bloggateway" />
         <module name="bloglistener" />
         <module name="blogregistry" />
@@ -27,6 +28,7 @@
       <module name="blog-search" options="-parameters" />
       <module name="blog-upload" options="-parameters" />
       <module name="blog-user" options="-parameters" />
+      <module name="blogarticle" options="-parameters" />
       <module name="blogarticleservice" options="-parameters" />
       <module name="blogcommon" options="" />
       <module name="bloggateway" options="-parameters" />

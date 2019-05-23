@@ -1,10 +1,9 @@
 server:
-  port: 8081
-  max-http-header-size: 20480
+  port: 8082
 
 spring:
   application:
-    name: user-service
+    name: article-service
   datasource:
     url: jdbc:mysql://localhost:3306/blog
     username: root
@@ -14,8 +13,6 @@ spring:
       minimum-idle: 10
   redis:
     host: 192.168.25.128
-  rabbitmq:
-    host: 127.0.0.1
 
 eureka:
   client:
@@ -27,3 +24,7 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
+
+ribbon:
+  eureka:
+    enabled: true

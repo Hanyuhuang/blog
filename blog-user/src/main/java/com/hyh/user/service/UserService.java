@@ -19,4 +19,6 @@ public interface UserService {
     int countUserByEmail(String email);
 
     int countUserByPhone(String phone);
+
+    int updatePassword(Long id,String oldPassword, String newPassword);
 }

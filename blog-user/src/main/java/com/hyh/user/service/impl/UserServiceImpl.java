@@ -7,12 +7,14 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.concurrent.TimeUnit;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -62,7 +64,7 @@ public class UserServiceImpl implements UserService {
     public int updateUser(User user) {
         // 删除缓存
         redisTemplate.boundHashOps("user").delete(user.getId()+"");
-        return userMapper.updateByPrimaryKey(user);
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 
     /**
@@ -159,4 +161,25 @@ public class UserServiceImpl implements UserService {
         }
         return result?1:0;
     }
+
+    /**
+     * 修改用户密码
+     * @param id
+     * @param oldPassword
+     * @param newPassword
+     * @return
+     */
+    @Override
+    public int updatePassword(Long id,String oldPassword, String newPassword) {
+        // 查询是否存在
+        User user = this.getUserByLoginName(id+"",oldPassword);
+        System.out.println(user);
+        // 用户不存在 或 密码错误
+        if (user == null) return 0;
+        // 密码加密 写入数据库
+        newPassword = DigestUtils.md5DigestAsHex(newPassword.getBytes());
+        user.setPassword(newPassword);
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
+
 }
