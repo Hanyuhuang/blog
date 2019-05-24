@@ -37,14 +37,28 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     private UserClient userClient;
 
+    /**
+     * 添加文章
+     * @param article
+     * @return
+     */
     @Override
     public int saveArticle(Article article) {
         article.setCreateTime(new Date());
         return articleMapper.insert(article);
     }
 
+    /**
+     * 查询我的文章
+     * @param pageCur
+     * @param pageSize
+     * @param orderBy
+     * @param desc
+     * @param keywords
+     * @return
+     */
     @Override
-    public PageResult<Article> listArticlesByPage(Integer pageCur, Integer pageSize, String orderBy, Boolean desc, String keywords) {
+    public PageResult<Article> listMyArticles(Integer pageCur, Integer pageSize, String orderBy, Boolean desc, String keywords) {
         // 开始分页
         PageHelper.startPage(pageCur, pageSize);
         // 过滤
@@ -66,10 +80,14 @@ public class ArticleServiceImpl implements ArticleService {
         return new PageResult<Article>(result.getTotal(),result.getPageSize(), result);
     }
 
+    /**
+     * 查询最新文章
+     * @return
+     */
     @Override
-    public PageResult<ArticleVo> listRecentArticles() {
+    public PageResult<ArticleVo> listArticles(Integer pageCur,Integer pageSize) {
         // 开始分页
-        PageHelper.startPage(1, 5);
+        PageHelper.startPage(pageCur, pageSize);
         Example example = new Example(Article.class);
         // 排序
         example.setOrderByClause("create_time DESC");
@@ -106,6 +124,10 @@ public class ArticleServiceImpl implements ArticleService {
         return new PageResult<ArticleVo>(list);
     }
 
+    /**
+     * 查询热门文章
+     * @return
+     */
     @Override
     public PageResult<Article> listHotArticles() {
         // 开始分页
@@ -139,7 +161,7 @@ public class ArticleServiceImpl implements ArticleService {
         // 设置浏览数
         Example viewExample = new Example(View.class);
         viewExample.createCriteria().andEqualTo("articleId",id);
-        articleVo.setStars(viewMapper.selectCountByExample(viewExample));
+        articleVo.setViews(viewMapper.selectCountByExample(viewExample));
         // 设置点赞数
         Example starExample = new Example(Star.class);
         starExample.createCriteria().andEqualTo("articleId",id);
@@ -147,7 +169,7 @@ public class ArticleServiceImpl implements ArticleService {
         // 设置收藏数
         Example followExample = new Example(Follow.class);
         followExample.createCriteria().andEqualTo("articleId",id);
-        articleVo.setStars(followMapper.selectCountByExample(followExample));
+        articleVo.setFollows(followMapper.selectCountByExample(followExample));
         // 设置评论
         Example commentExample = new Example(Comment.class);
         commentExample.createCriteria().andEqualTo("articleId",id);
@@ -182,5 +204,36 @@ public class ArticleServiceImpl implements ArticleService {
         articleVo.setCommentList(commentVoList);
         articleVo.setComments(commentList.size());
         return articleVo;
+    }
+
+    /**
+     * 根据文章id删除文章
+     * @param id
+     * @return
+     */
+    @Override
+    public int deleteArticleById(Long id) {
+        // 删除文章的所有评论
+        Example commentExample = new Example(Comment.class);
+        commentExample.createCriteria().andEqualTo("articleId",id);
+        // 删除所有评论的回复
+        Example replyExample = new Example(Reply.class);
+        replyExample.createCriteria().andEqualTo("articleId",id);
+        return articleMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 更新文章
+     * @param article
+     * @return
+     */
+    @Override
+    public int updateArticle(Article article) {
+        return articleMapper.updateByPrimaryKeySelective(article);
+    }
+
+    @Override
+    public Article getArticleById(Long id) {
+        return articleMapper.selectByPrimaryKey(id);
     }
 }

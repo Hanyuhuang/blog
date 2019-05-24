@@ -1,6 +1,5 @@
 server:
   port: 8081
-  max-http-header-size: 20480
 
 spring:
   application:
@@ -13,7 +12,7 @@ spring:
       maximum-pool-size: 30
       minimum-idle: 10
   redis:
-    host: 192.168.25.128
+    host: 127.0.0.1
   rabbitmq:
     host: 127.0.0.1
 

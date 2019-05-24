@@ -21,6 +21,7 @@ public class Article implements Serializable {
     private String tag;     //文章标签
     private String image;   //文章配图
     private String content; //文章内容
+    private String mdContent; //MD格式的文章内容
     private Date createTime;//写文章时间
     private Date updateTime;//文章修改时间
 }

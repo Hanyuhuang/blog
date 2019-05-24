@@ -103,8 +103,6 @@ public class UserServiceImpl implements UserService {
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = userMapper.getUserByLoginName(loginName,password);
         if (user!=null) user.setPassword(null);
-        // 放入缓存
-        redisTemplate.boundHashOps("user").put(user.getId()+"",user);
         return user;
     }
 
@@ -173,7 +171,6 @@ public class UserServiceImpl implements UserService {
     public int updatePassword(Long id,String oldPassword, String newPassword) {
         // 查询是否存在
         User user = this.getUserByLoginName(id+"",oldPassword);
-        System.out.println(user);
         // 用户不存在 或 密码错误
         if (user == null) return 0;
         // 密码加密 写入数据库

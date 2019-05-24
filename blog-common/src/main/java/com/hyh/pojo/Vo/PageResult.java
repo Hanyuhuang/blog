@@ -16,6 +16,10 @@ public class PageResult<T> implements Serializable {
     private int totalPage;
     private List<T> items;
 
+    public PageResult(long total, List<T> items) {
+        this.total = total;
+        this.items = items;
+    }
     public PageResult(List<T> items) {
         this.items = items;
     }

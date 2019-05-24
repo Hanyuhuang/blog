@@ -8,11 +8,17 @@ public interface ArticleService {
 
     int saveArticle(Article article);
 
-    PageResult<Article> listArticlesByPage(Integer pageCur, Integer pageSize, String orderBy, Boolean desc, String keywords);
+    PageResult<Article> listMyArticles(Integer pageCur, Integer pageSize, String orderBy, Boolean desc, String keywords);
 
-    PageResult<ArticleVo> listRecentArticles();
+    PageResult<ArticleVo> listArticles(Integer pageCur,Integer pageSize);
 
     PageResult<Article> listHotArticles();
 
     ArticleVo getArticleDetail(Long id);
+
+    int deleteArticleById(Long id);
+
+    int updateArticle(Article article);
+
+    Article getArticleById(Long id);
 }

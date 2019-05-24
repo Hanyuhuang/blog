@@ -11,7 +11,7 @@ import com.hyh.user.service.UserService;
 import javax.servlet.http.HttpSession;
 
 
-@CrossOrigin
+@CrossOrigin(value = {"http://localhost:8080","http://localhost:8081","http://localhost:8082"},allowCredentials = "true")
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -48,7 +48,7 @@ public class UserController {
             if (result>0) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -64,7 +64,7 @@ public class UserController {
             if (result>0) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -84,10 +84,9 @@ public class UserController {
             if (user==null) new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             // 放入session
             session.setAttribute("user",user);
-            System.out.println(session.getAttribute("user"));
             return ResponseEntity.ok(user);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -102,7 +101,7 @@ public class UserController {
            session.invalidate();
            return ResponseEntity.ok(null);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -117,7 +116,7 @@ public class UserController {
             userService.getCode(email);
             return  ResponseEntity.ok(null);
         } catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -133,7 +132,7 @@ public class UserController {
             if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(null);
         } catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -149,7 +148,7 @@ public class UserController {
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -166,7 +165,7 @@ public class UserController {
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -182,7 +181,7 @@ public class UserController {
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
