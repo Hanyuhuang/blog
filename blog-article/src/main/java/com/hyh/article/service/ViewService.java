@@ -14,11 +14,11 @@ public interface ViewService {
 
     int updateView(View view);
 
-    int deleteViewById(Long id);
+    int deleteViewByArticleId(Long articleId,User user);
 
-    int deleteViewsById(Long[] ids);
+    int deleteViewsByArticleId(Long[] ids,User user);
 
-    int deleteAllViews(Long id);
+    int deleteAllViews(User user);
 
     PageResult<ArticleVo> listViews(Integer pageCur, Integer pageSize, User user);
 }

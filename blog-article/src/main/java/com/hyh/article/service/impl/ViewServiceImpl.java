@@ -43,30 +43,31 @@ public class ViewServiceImpl implements ViewService {
     }
 
     @Override
-    public int deleteViewById(Long id) {
+    public int deleteViewByArticleId(Long articleId,User user) {
         View view = new View();
-        view.setId(id);
         view.setStatus(0);
-        return viewMapper.updateByPrimaryKeySelective(view);
+        Example example = new Example(View.class);
+        example.createCriteria().andEqualTo("articleId",articleId).andEqualTo("userId",user.getId());
+        return viewMapper.updateByExampleSelective(view,example);
     }
 
     @Override
-    public int deleteViewsById(Long[] ids) {
+    public int deleteViewsByArticleId(Long[] ids,User user) {
         int count = 0;
-        for (Long id: ids ) {
-            count += deleteViewById(id);
+        for (Long id: ids) {
+            count += deleteViewByArticleId(id,user);
         }
         return count;
     }
 
     @Override
-    public int deleteAllViews(Long id) {
+    public int deleteAllViews(User user) {
         Example example = new Example(View.class);
-        example.createCriteria().andEqualTo("userId",id);
+        example.createCriteria().andEqualTo("userId",user.getId());
         List<View> list = viewMapper.selectByExample(example);
         int count = 0;
         for (View view: list) {
-            count += deleteViewById(view.getId());
+            count += deleteViewByArticleId(view.getId(),user);
         }
         return count;
     }

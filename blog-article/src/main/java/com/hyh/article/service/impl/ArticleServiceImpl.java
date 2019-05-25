@@ -58,7 +58,8 @@ public class ArticleServiceImpl implements ArticleService {
      * @return
      */
     @Override
-    public PageResult<Article> listMyArticles(Integer pageCur, Integer pageSize, String orderBy, Boolean desc, String keywords) {
+    public PageResult<Article> listMyArticles(Integer pageCur, Integer pageSize, String orderBy,
+                                              Boolean desc, String keywords,User user) {
         // 开始分页
         PageHelper.startPage(pageCur, pageSize);
         // 过滤
@@ -73,7 +74,7 @@ public class ArticleServiceImpl implements ArticleService {
             String orderByClause = orderBy + (desc ? " DESC" : " ASC");
             example.setOrderByClause(orderByClause);
         }
-        //example.createCriteria().andEqualTo("userId",)
+        example.createCriteria().andEqualTo("userId",user.getId());
         // 查询
         Page<Article> result = (Page<Article>) articleMapper.selectByExample(example);
         // 返回结果
@@ -105,7 +106,7 @@ public class ArticleServiceImpl implements ArticleService {
             // 设置浏览数
             Example viewExample = new Example(View.class);
             viewExample.createCriteria().andEqualTo("articleId",item.getId());
-            articleVo.setStars(viewMapper.selectCountByExample(viewExample));
+            articleVo.setViews(viewMapper.selectCountByExample(viewExample));
             // 设置点赞数
             Example starExample = new Example(Star.class);
             starExample.createCriteria().andEqualTo("articleId",item.getId());
@@ -113,10 +114,10 @@ public class ArticleServiceImpl implements ArticleService {
             // 设置收藏数
             Example followExample = new Example(Follow.class);
             followExample.createCriteria().andEqualTo("articleId",item.getId());
-            articleVo.setStars(followMapper.selectCountByExample(followExample));
+            articleVo.setFollows(followMapper.selectCountByExample(followExample));
             // 设置评论数
             Example commentExample = new Example(Comment.class);
-            followExample.createCriteria().andEqualTo("articleId",item.getId());
+            commentExample.createCriteria().andEqualTo("articleId",item.getId());
             articleVo.setComments(commentMapper.selectCountByExample(commentExample));
             return articleVo;
         }).collect(Collectors.toList());
@@ -148,16 +149,29 @@ public class ArticleServiceImpl implements ArticleService {
      * @return
      */
     @Override
-    public ArticleVo getArticleDetail(Long id) {
+    public ArticleVo getArticleDetail(Long id,User user) {
         ArticleVo articleVo = new ArticleVo();
         // 查询文章内容
         Article article = articleMapper.selectByPrimaryKey(id);
         // 如果没有查询到
         if (article==null) return articleVo;
         articleVo.setArticle(article);
+        // 查询当前用户是否已点赞或收藏
+        if (user!=null){
+            // 是否点赞
+            Example starExample = new Example(Star.class);
+            starExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
+            int starCount = starMapper.selectCountByExample(starExample);
+            if (starCount>0) articleVo.setStar(true);
+            // 是否收藏
+            Example followExample = new Example(Follow.class);
+            followExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
+            int followCount = followMapper.selectCountByExample(followExample);
+            if (followCount>0) articleVo.setFollow(true);
+        }
         // 设置作者
-        User user = userClient.getUserById(article.getUserId());
-        articleVo.setUser(user);
+        User author = userClient.getUserById(article.getUserId());
+        articleVo.setUser(author);
         // 设置浏览数
         Example viewExample = new Example(View.class);
         viewExample.createCriteria().andEqualTo("articleId",id);

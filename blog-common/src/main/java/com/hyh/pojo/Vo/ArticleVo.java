@@ -14,6 +14,8 @@ public class ArticleVo implements Serializable {
     private int stars;
     private int follows;
     private int comments;
+    private boolean isStar;
+    private boolean isFollow;
     private User user;
     private List<CommentVo> commentList;
 

@@ -1,10 +1,8 @@
 package com.hyh.article.controller;
 
 import com.hyh.article.service.ArticleService;
-import com.hyh.article.service.ViewService;
 import com.hyh.pojo.Article;
 import com.hyh.pojo.User;
-import com.hyh.pojo.View;
 import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 
 @CrossOrigin(value = {"http://localhost:8080","http://localhost:8081","http://localhost:8082"},allowCredentials = "true")
 @RestController
@@ -22,8 +19,6 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
-    @Autowired
-    private ViewService viewService;
     /**
      * 写文章
      * @param article
@@ -42,7 +37,7 @@ public class ArticleController {
             if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -57,10 +52,11 @@ public class ArticleController {
      */
     @GetMapping("/myArticle")
     public ResponseEntity<PageResult<Article>> listMyArticles(Integer pageCur,Integer pageSize,
-                                            String orderBy,Boolean desc,String keywords){
+                                            String orderBy,Boolean desc,String keywords,HttpSession session){
         try {
-            PageResult<Article> result = articleService.listMyArticles(pageCur,pageSize,orderBy,desc,keywords);
-            if (result.getItems().size()<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            User user = (User) session.getAttribute("user");
+            if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            PageResult<Article> result = articleService.listMyArticles(pageCur,pageSize,orderBy,desc,keywords,user);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,10 +69,11 @@ public class ArticleController {
      * @return
      */
     @GetMapping("/detail/{id}")
-    public ResponseEntity<ArticleVo> getArticleDetail(@PathVariable("id") Long id){
+    public ResponseEntity<ArticleVo> getArticleDetail(@PathVariable("id") Long id,HttpSession session){
         try {
+            User user = (User) session.getAttribute("user");
             // 查询文章详情
-            ArticleVo result = articleService.getArticleDetail(id);
+            ArticleVo result = articleService.getArticleDetail(id,user);
             if (result==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
@@ -125,6 +122,7 @@ public class ArticleController {
     @GetMapping("/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable("id") Long id){
         try {
+
             Article result = articleService.getArticleById(id);
             if (result == null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);

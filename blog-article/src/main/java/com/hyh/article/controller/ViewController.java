@@ -2,7 +2,6 @@ package com.hyh.article.controller;
 
 
 import com.hyh.article.service.ViewService;
-import com.hyh.pojo.Article;
 import com.hyh.pojo.User;
 import com.hyh.pojo.View;
 import com.hyh.pojo.Vo.ArticleVo;
@@ -37,7 +36,6 @@ public class ViewController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             PageResult<ArticleVo> result = viewService.listViews(pageCur,pageSize,user);
-            if (result.getItems().size()<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,8 +49,8 @@ public class ViewController {
      * @param session
      * @return
      */
-    @PostMapping
-    public ResponseEntity<Integer> insertView(Long articleId,HttpSession session){
+    @PostMapping("/{id}")
+    public ResponseEntity<Integer> insertView(@PathVariable("id") Long articleId,HttpSession session){
         try {
             // 添加浏览记录
             User user = (User) session.getAttribute("user");
@@ -82,13 +80,14 @@ public class ViewController {
     }
     /**
      * 根据id删除浏览记录
-     * @param id
+     * @param articleId
      * @return
      */
     @DeleteMapping("/{id}")
-    public ResponseEntity<Integer> deleteViewById(@PathVariable("id") Long id){
+    public ResponseEntity<Integer> deleteViewByArticleId(@PathVariable("id") Long articleId,HttpSession session){
         try {
-            int result = viewService.deleteViewById(id);
+            User user = (User) session.getAttribute("user");
+            int result = viewService.deleteViewByArticleId(articleId,user);
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
@@ -102,12 +101,14 @@ public class ViewController {
      * @return
      */
     @DeleteMapping
-    public ResponseEntity<Integer> deleteViewsById(Long[] ids){
+    public ResponseEntity<Integer> deleteViewsByArticleId(Long[] ids,HttpSession session){
         try {
-            int result = viewService.deleteViewsById(ids);
+            User user = (User) session.getAttribute("user");
+            int result = viewService.deleteViewsByArticleId(ids,user);
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -121,8 +122,9 @@ public class ViewController {
     public ResponseEntity<Integer> deleteAllViews(HttpSession session){
         try {
             User user = (User) session.getAttribute("user");
+            // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            int result = viewService.deleteAllViews(user.getId());
+            int result = viewService.deleteAllViews(user);
             if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
