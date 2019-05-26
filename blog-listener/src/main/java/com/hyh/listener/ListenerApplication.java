@@ -1,4 +1,4 @@
-package com.hyh.mail;
+package com.hyh.listener;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

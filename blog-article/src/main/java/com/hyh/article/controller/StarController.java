@@ -1,10 +1,10 @@
 package com.hyh.article.controller;
 
 import com.hyh.article.service.StarService;
-import com.hyh.pojo.Star;
 import com.hyh.pojo.User;
 import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
+import com.hyh.pojo.Bo.StarBo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,21 +41,21 @@ public class StarController {
 
     /**
      * 点赞
-     * @param star
+     * @param starBo
      * @param session
      * @return
      */
     @PostMapping
-    public ResponseEntity<Integer> insertStar(@RequestBody Star star, HttpSession session){
+    public ResponseEntity<Integer> insertStar(@RequestBody StarBo starBo, HttpSession session){
         try {
             User user = (User) session.getAttribute("user");
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            star.setUserId(user.getId());
-            int result = starService.insertStar(star);
+            int result = starService.insertStar(starBo,user);
             if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

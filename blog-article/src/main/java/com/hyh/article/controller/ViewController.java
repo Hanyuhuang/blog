@@ -54,7 +54,7 @@ public class ViewController {
         try {
             // 添加浏览记录
             User user = (User) session.getAttribute("user");
-            if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (user==null) return ResponseEntity.ok(null);
             View view = viewService.getViewByArticle(articleId,user.getId());
             int result = 0;
             // 第一次浏览 添加浏览记录

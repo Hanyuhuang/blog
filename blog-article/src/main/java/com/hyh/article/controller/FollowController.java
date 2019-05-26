@@ -2,6 +2,7 @@ package com.hyh.article.controller;
 
 import com.hyh.article.service.FollowService;
 import com.hyh.article.service.StarService;
+import com.hyh.pojo.Bo.FollowBo;
 import com.hyh.pojo.Follow;
 import com.hyh.pojo.Star;
 import com.hyh.pojo.User;
@@ -43,18 +44,17 @@ public class FollowController {
 
     /**
      * 收藏
-     * @param follow
+     * @param followBo
      * @param session
      * @return
      */
     @PostMapping
-    public ResponseEntity<Integer> insertFollow(@RequestBody Follow follow, HttpSession session){
+    public ResponseEntity<Integer> insertFollow(@RequestBody FollowBo followBo, HttpSession session){
         try {
             User user = (User) session.getAttribute("user");
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            follow.setUserId(user.getId());
-            int result = followService.insertFollow(follow);
+            int result = followService.insertFollow(followBo,user);
             if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {

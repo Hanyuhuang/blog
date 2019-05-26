@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -39,6 +40,10 @@ public class UserServiceImpl implements UserService {
         String password = user.getPassword();
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         user.setPassword(password);
+        // 给用户设置一些默认信息
+        user.setSex("男");
+        user.setBirthday(new Date());
+        user.setImage("https://i.loli.net/2017/08/21/599a521472424.jpg");
         int result = userMapper.insert(user);
         return result;
     }
@@ -113,7 +118,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void getCode(String email) {
         // 放入消息队列 发送邮件
-        amqpTemplate.convertAndSend("blog-mail-exchange","mail.code",email);
+        amqpTemplate.convertAndSend("blog-email-code-exchange","email.code",email);
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.hyh.mail.listener;
+package com.hyh.listener.listener;
 
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.Exchange;
@@ -24,18 +24,18 @@ public class MailListener {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @RabbitListener(bindings = @QueueBinding(value = @Queue("mail.code.queue"),
+    @RabbitListener(bindings = @QueueBinding(value = @Queue("email.code.queue"),
                     exchange = @Exchange(
-                            value = "blog-mail-exchange",
+                            value = "blog-email-code-exchange",
                             type = ExchangeTypes.TOPIC
                     ),
-                    key = "mail.code"))
+                    key = "email.code"))
     public void sendCode(String email) throws MessagingException {
         MimeMessage message = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setFrom(SENDER);
         helper.setTo(email);
-        helper.setSubject("注册验证码");
+        helper.setSubject("用户注册");
         // 产生6位随机验证码
         int code = (int) (Math.random()*1000000);
         StringBuffer sb = new StringBuffer();

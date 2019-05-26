@@ -1,13 +1,13 @@
 package com.hyh.article.service;
 
-import com.hyh.pojo.Follow;
+import com.hyh.pojo.Bo.FollowBo;
 import com.hyh.pojo.User;
 import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
 
 public interface FollowService {
 
-    int insertFollow(Follow follow);
+    int insertFollow(FollowBo followBo,User user);
 
     int deleteFollowByArticleId(Long articleId,User user);
 

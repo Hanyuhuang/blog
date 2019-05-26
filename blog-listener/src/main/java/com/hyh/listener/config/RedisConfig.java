@@ -1,4 +1,4 @@
-package com.hyh.mail.config;
+package com.hyh.listener.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

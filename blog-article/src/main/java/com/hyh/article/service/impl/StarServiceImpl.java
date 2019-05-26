@@ -3,33 +3,55 @@ package com.hyh.article.service.impl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.hyh.article.mapper.ArticleMapper;
+import com.hyh.article.mapper.NoticeMapper;
 import com.hyh.article.mapper.StarMapper;
 import com.hyh.article.service.StarService;
 import com.hyh.pojo.Article;
+import com.hyh.pojo.Notice;
 import com.hyh.pojo.Star;
 import com.hyh.pojo.User;
 import com.hyh.pojo.Vo.ArticleVo;
+import com.hyh.pojo.Bo.NoticeBo;
 import com.hyh.pojo.Vo.PageResult;
+import com.hyh.pojo.Bo.StarBo;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class StarServiceImpl implements StarService {
 
     @Autowired
     private StarMapper starMapper;
     @Autowired
+    private NoticeMapper noticeMapper;
+    @Autowired
     private ArticleMapper articleMapper;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @Override
-    public int insertStar(Star star) {
-        star.setTime(new Date());
-        return starMapper.insert(star);
+    public int insertStar(StarBo starBo, User user) {
+        // 添加点赞记录
+        starBo.getStar().setUserId(user.getId());
+        starBo.getStar().setTime(new Date());
+        int result =  starMapper.insert(starBo.getStar());
+        // 添加通知记录
+        Notice notice = new Notice(user.getId(), starBo.getUser().getId(),0,1,new Date());
+        int count = noticeMapper.insert(notice);
+        if (count>0){
+            // 封装通知 并发送
+            NoticeBo noticeBo = new NoticeBo(user, starBo.getUser().getId(),1);
+            amqpTemplate.convertAndSend("blog-notice-exchange","notice", noticeBo);
+        }
+        return result;
     }
 
 

@@ -4,12 +4,17 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.hyh.article.mapper.ArticleMapper;
 import com.hyh.article.mapper.FollowMapper;
+import com.hyh.article.mapper.NoticeMapper;
 import com.hyh.article.service.FollowService;
 import com.hyh.pojo.Article;
+import com.hyh.pojo.Bo.FollowBo;
+import com.hyh.pojo.Bo.NoticeBo;
 import com.hyh.pojo.Follow;
+import com.hyh.pojo.Notice;
 import com.hyh.pojo.User;
 import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -25,11 +30,26 @@ public class FollowServiceImpl implements FollowService {
     private FollowMapper followMapper;
     @Autowired
     private ArticleMapper articleMapper;
+    @Autowired
+    private NoticeMapper noticeMapper;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @Override
-    public int insertFollow(Follow follow) {
-        follow.setTime(new Date());
-        return followMapper.insert(follow);
+    public int insertFollow(FollowBo followBo,User user) {
+        // 添加点赞记录
+        followBo.getFollow().setUserId(user.getId());
+        followBo.getFollow().setTime(new Date());
+        int result =  followMapper.insert(followBo.getFollow());
+        // 添加通知记录
+        Notice notice = new Notice(user.getId(), followBo.getUser().getId(),0,2,new Date());
+        int count = noticeMapper.insert(notice);
+        if (count>0){
+            // 封装通知 并发送
+            NoticeBo noticeBo = new NoticeBo(user, followBo.getUser().getId(),2);
+            amqpTemplate.convertAndSend("blog-notice-exchange","notice", noticeBo);
+        }
+        return result;
     }
 
     @Override

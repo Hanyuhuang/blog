@@ -13,6 +13,11 @@
     <artifactId>blog-listener</artifactId>
 
     <dependencies>
+        <!--WebSocket-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
         <!-- 支持发送邮件 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,6 +37,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--pojo-->
+        <dependency>
+            <groupId>com.hyh</groupId>
+            <artifactId>blog-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
