@@ -42,7 +42,7 @@ public class FollowServiceImpl implements FollowService {
         followBo.getFollow().setTime(new Date());
         int result =  followMapper.insert(followBo.getFollow());
         // 添加通知记录
-        Notice notice = new Notice(user.getId(), followBo.getUser().getId(),0,2,new Date());
+        Notice notice = new Notice(user.getId(), followBo.getUser().getId(),followBo.getFollow().getArticleId(),0,2,new Date());
         int count = noticeMapper.insert(notice);
         if (count>0){
             // 封装通知 并发送

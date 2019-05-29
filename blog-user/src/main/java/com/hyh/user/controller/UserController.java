@@ -10,10 +10,7 @@ import com.hyh.user.service.UserService;
 
 import javax.servlet.http.HttpSession;
 
-
-@CrossOrigin(value = {"http://localhost:8080","http://localhost:8081","http://localhost:8082"},allowCredentials = "true")
 @RestController
-@RequestMapping("user")
 public class UserController {
 
     @Autowired
@@ -25,15 +22,30 @@ public class UserController {
      * @return
      */
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") Long id){
-        return userService.getUserById(id);
-        /*try {
+    public ResponseEntity<User> getUserById(@PathVariable("id") Long id){
+        try {
             User user =  userService.getUserById(id);
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(user);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }*/
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    /**
+     * 根据用户id查询用户信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/name/{id}")
+    public ResponseEntity<String> getUserNameById(@PathVariable("id") Long id){
+        try {
+            String user =  userService.getUserNameById(id);
+            if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
@@ -45,7 +57,7 @@ public class UserController {
     public ResponseEntity<Integer> checkEmail(@PathVariable("email") String email){
         try {
             int result =  userService.countUserByEmail(email);
-            if (result>0) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -61,7 +73,7 @@ public class UserController {
     public ResponseEntity<Integer> checkPhone(@PathVariable("phone") String phone){
         try {
             int result =  userService.countUserByPhone(phone);
-            if (result>0) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -81,7 +93,7 @@ public class UserController {
         try {
             User user =  userService.getUserByLoginName(loginName,password);
             // 用户不存在
-            if (user==null) new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (user==null) new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             // 放入session
             session.setAttribute("user",user);
             return ResponseEntity.ok(user);
@@ -129,8 +141,7 @@ public class UserController {
     public ResponseEntity<Integer> insertUser(@RequestBody UserVo userVo){
         try{
             int result = userService.saveUser(userVo.getUser(),userVo.getCode());
-            if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            return ResponseEntity.ok(null);
+            return ResponseEntity.ok(result);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -145,7 +156,6 @@ public class UserController {
     public ResponseEntity<Integer> updateUser(@RequestBody User user){
         try {
             int result = userService.updateUser(user);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -160,9 +170,7 @@ public class UserController {
     @PutMapping("/password")
     public ResponseEntity<Integer> updatePassword(@RequestBody UserVo user){
         try {
-            System.out.println(user);
             int result = userService.updatePassword(user.getId(),user.getPassword(),user.getNewPassword());
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -178,7 +186,7 @@ public class UserController {
     public ResponseEntity<Integer> deleteUserById(@PathVariable("id") Long id){
         try {
             int result = userService.deleteUserById(id);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (result < 1) return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

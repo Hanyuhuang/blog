@@ -55,8 +55,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int deleteUserById(Long id) {
-        // 删除缓存
-        redisTemplate.boundHashOps("user").delete(id+"");
         return userMapper.deleteByPrimaryKey(id);
     }
 
@@ -67,8 +65,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int updateUser(User user) {
-        // 删除缓存
-        redisTemplate.boundHashOps("user").delete(user.getId()+"");
         return userMapper.updateByPrimaryKeySelective(user);
     }
 
@@ -79,20 +75,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User getUserById(Long id) {
-        // 查询缓存
-        User user = (User) redisTemplate.boundHashOps("user").get(id+"");
-        // 缓存为空
-        if (user==null){
-            user = userMapper.selectByPrimaryKey(id);
-            // 数据库查询到
-            if (user!=null){
-                user.setPassword(null);
-                redisTemplate.boundHashOps("user").put(user.getId()+"",user);
-            } else {
-                redisTemplate.boundHashOps("user").put(user.getId(),new User());
-                redisTemplate.expire("user",1, TimeUnit.MINUTES);
-            }
-        }
+        User user = userMapper.selectByPrimaryKey(id);
+        if (user!=null) user.setPassword(null);
         return user;
     }
 
@@ -128,19 +112,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int countUserByEmail(String email) {
-        boolean result = redisTemplate.boundHashOps("email").hasKey(email);
-        // 缓存中没有
-        if (!result){
-            Example example = new Example(User.class);
-            example.createCriteria().andEqualTo("email",email);
-            int count = userMapper.selectCountByExample(example);
-            // 数据库中存在
-            if (count>0){
-                result = true;
-                redisTemplate.boundHashOps("email").put(email,email);
-            }
-        }
-        return result?1:0;
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("email",email);
+        return userMapper.selectCountByExample(example);
     }
 
     /**
@@ -150,19 +124,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int countUserByPhone(String phone) {
-        boolean result = redisTemplate.boundHashOps("phone").hasKey(phone);
-        // 缓存中没有
-        if (!result){
-            Example example = new Example(User.class);
-            example.createCriteria().andEqualTo("phone",phone);
-            int count = userMapper.selectCountByExample(example);
-            // 数据库中存在
-            if (count>0){
-                result = true;
-                redisTemplate.boundHashOps("phone").put(phone,phone);
-            }
-        }
-        return result?1:0;
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("phone",phone);
+        return userMapper.selectCountByExample(example);
     }
 
     /**
@@ -182,6 +146,10 @@ public class UserServiceImpl implements UserService {
         newPassword = DigestUtils.md5DigestAsHex(newPassword.getBytes());
         user.setPassword(newPassword);
         return userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    public String getUserNameById(Long id){
+        return userMapper.getUserNameById(id);
     }
 
 }

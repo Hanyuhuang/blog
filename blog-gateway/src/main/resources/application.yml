@@ -12,10 +12,14 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     instance-id: ${spring.application.name}:${server.port}
+
 zuul:
   retryable: true
   ignored-services:
-    - upload-service # 忽略upload-service服务
+    - listener-service # 忽略upload-service服务
   routes:
-    article-service: /article/** # 将商品微服务映射到/item/**
-    user-service: /user/**
+    user-service: /user/** # 这里是映射路径
+    article-service: /article/**
+    upload-service: /upload/**
+  sensitive-headers: Access-Control-Allow-Origin
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken

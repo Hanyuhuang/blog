@@ -31,7 +31,7 @@ public class CommentServiceImpl implements CommentService {
         commentBo.getComment().setCreateTime(new Date());
         int result = commentMapper.insert(commentBo.getComment());
         // 添加通知
-        Notice notice = new Notice(user.getId(),commentBo.getUser().getId(),0,3,new Date());
+        Notice notice = new Notice(user.getId(),commentBo.getUser().getId(),commentBo.getComment().getArticleId(),0,3,new Date());
         int count = noticeMapper.insert(notice);
         if (count>0){
             // 封装通知对象 并 发送通知

@@ -12,11 +12,14 @@ import com.hyh.pojo.Vo.PageResult;
 import com.hyh.pojo.Vo.ReplyVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Service
@@ -36,6 +39,8 @@ public class ArticleServiceImpl implements ArticleService {
     private ReplyMapper replyMapper;
     @Autowired
     private UserClient userClient;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     /**
      * 添加文章
@@ -101,8 +106,8 @@ public class ArticleServiceImpl implements ArticleService {
             // 设置文章
             articleVo.setArticle(item);
             // 设置作者
-            User user = userClient.getUserById(item.getUserId());
-            articleVo.setUser(user);
+            ResponseEntity<User> user = userClient.getUserById(item.getUserId());
+            articleVo.setUser(user.getBody());
             // 设置浏览数
             Example viewExample = new Example(View.class);
             viewExample.createCriteria().andEqualTo("articleId",item.getId());
@@ -150,73 +155,82 @@ public class ArticleServiceImpl implements ArticleService {
      */
     @Override
     public ArticleVo getArticleDetail(Long id,User user) {
-        ArticleVo articleVo = new ArticleVo();
-        // 查询文章内容
-        Article article = articleMapper.selectByPrimaryKey(id);
-        // 如果没有查询到
-        if (article==null) return articleVo;
-        articleVo.setArticle(article);
-        // 查询当前用户是否已点赞或收藏
-        if (user!=null){
-            // 是否点赞
+        // 查询缓存
+        ArticleVo articleVo = (ArticleVo) redisTemplate.boundHashOps("article").get(id+"");
+        // 缓存没有 查询数据库
+        if (articleVo == null){
+            articleVo = new ArticleVo();
+            // 查询文章内容
+            Article article = articleMapper.selectByPrimaryKey(id);
+            // 如果没有查询到
+            if (article==null) return articleVo;
+            articleVo.setArticle(article);
+            // 查询当前用户是否已点赞或收藏
+            if (user!=null){
+                // 是否点赞
+                Example starExample = new Example(Star.class);
+                starExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
+                int starCount = starMapper.selectCountByExample(starExample);
+                if (starCount>0) articleVo.setStar(true);
+                // 是否收藏
+                Example followExample = new Example(Follow.class);
+                followExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
+                int followCount = followMapper.selectCountByExample(followExample);
+                if (followCount>0) articleVo.setFollow(true);
+            }
+            // 设置作者
+            ResponseEntity<User> author = userClient.getUserById(article.getUserId());
+            articleVo.setUser(author.getBody());
+            // 设置浏览数
+            Example viewExample = new Example(View.class);
+            viewExample.createCriteria().andEqualTo("articleId",id);
+            articleVo.setViews(viewMapper.selectCountByExample(viewExample));
+            // 设置点赞数
             Example starExample = new Example(Star.class);
-            starExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
-            int starCount = starMapper.selectCountByExample(starExample);
-            if (starCount>0) articleVo.setStar(true);
-            // 是否收藏
+            starExample.createCriteria().andEqualTo("articleId",id);
+            articleVo.setStars(starMapper.selectCountByExample(starExample));
+            // 设置收藏数
             Example followExample = new Example(Follow.class);
-            followExample.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("articleId",id);
-            int followCount = followMapper.selectCountByExample(followExample);
-            if (followCount>0) articleVo.setFollow(true);
-        }
-        // 设置作者
-        User author = userClient.getUserById(article.getUserId());
-        articleVo.setUser(author);
-        // 设置浏览数
-        Example viewExample = new Example(View.class);
-        viewExample.createCriteria().andEqualTo("articleId",id);
-        articleVo.setViews(viewMapper.selectCountByExample(viewExample));
-        // 设置点赞数
-        Example starExample = new Example(Star.class);
-        starExample.createCriteria().andEqualTo("articleId",id);
-        articleVo.setStars(starMapper.selectCountByExample(starExample));
-        // 设置收藏数
-        Example followExample = new Example(Follow.class);
-        followExample.createCriteria().andEqualTo("articleId",id);
-        articleVo.setFollows(followMapper.selectCountByExample(followExample));
-        // 设置评论
-        Example commentExample = new Example(Comment.class);
-        commentExample.createCriteria().andEqualTo("articleId",id);
-        List<Comment> commentList = commentMapper.selectByExample(commentExample);
-        // 评论封装
-        List<CommentVo> commentVoList = commentList.stream().map(comment -> {
-            // 创建评论Vo
-            CommentVo commentVo = new CommentVo();
-            commentVo.setComment(comment);
-            // 设置评论人
-            User commentUser = userClient.getUserById(comment.getUserId());
-            commentVo.setUser(commentUser);
-            // 查询评论的回复内容
-            Example replyExample = new Example(Reply.class);
-            replyExample.createCriteria().andEqualTo("commentId",comment.getId());
-            List<Reply> replyList = replyMapper.selectByExample(replyExample);
-            // 评论回复封装
-            List<ReplyVo> replyVoList = replyList.stream().map(reply -> {
-                // 创建评论回复Vo
-                ReplyVo replyVo = new ReplyVo();
-                replyVo.setReply(reply);
+            followExample.createCriteria().andEqualTo("articleId",id);
+            articleVo.setFollows(followMapper.selectCountByExample(followExample));
+            // 设置评论
+            Example commentExample = new Example(Comment.class);
+            commentExample.createCriteria().andEqualTo("articleId",id);
+            List<Comment> commentList = commentMapper.selectByExample(commentExample);
+            // 评论封装
+            List<CommentVo> commentVoList = commentList.stream().map(comment -> {
+                // 创建评论Vo
+                CommentVo commentVo = new CommentVo();
+                commentVo.setComment(comment);
                 // 设置评论人
-                User replyUser = userClient.getUserById(reply.getUserId());
-                replyVo.setUser(replyUser);
-                return replyVo;
+                ResponseEntity<User> commentUser = userClient.getUserById(comment.getUserId());
+                commentVo.setUser(commentUser.getBody());
+                // 查询评论的回复内容
+                Example replyExample = new Example(Reply.class);
+                replyExample.createCriteria().andEqualTo("commentId",comment.getId());
+                List<Reply> replyList = replyMapper.selectByExample(replyExample);
+                // 评论回复封装
+                List<ReplyVo> replyVoList = replyList.stream().map(reply -> {
+                    // 创建评论回复Vo
+                    ReplyVo replyVo = new ReplyVo();
+                    replyVo.setReply(reply);
+                    // 设置评论人
+                    ResponseEntity<User> replyUser = userClient.getUserById(reply.getUserId());
+                    replyVo.setUser(replyUser.getBody());
+                    return replyVo;
+                }).collect(Collectors.toList());
+                // 设置评论回复
+                commentVo.setReplyList(replyVoList);
+                return commentVo;
             }).collect(Collectors.toList());
-            // 设置评论回复
-            commentVo.setReplyList(replyVoList);
-            return commentVo;
-        }).collect(Collectors.toList());
-        // 设置评论 和 评论数
-        articleVo.setCommentList(commentVoList);
-        articleVo.setComments(commentList.size());
+            // 设置评论 和 评论数
+            articleVo.setCommentList(commentVoList);
+            articleVo.setComments(commentList.size());
+            // 放入缓存
+            redisTemplate.boundHashOps("article").put(id+"",articleVo);
+            // 有效时间 5分钟
+            redisTemplate.expire("article",5, TimeUnit.MINUTES);
+        }
         return articleVo;
     }
 
@@ -227,6 +241,8 @@ public class ArticleServiceImpl implements ArticleService {
      */
     @Override
     public int deleteArticleById(Long id) {
+        // 删除缓存
+        redisTemplate.boundHashOps("article").delete(id+"");
         // 删除文章的所有评论
         Example commentExample = new Example(Comment.class);
         commentExample.createCriteria().andEqualTo("articleId",id);

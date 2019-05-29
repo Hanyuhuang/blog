@@ -9,9 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>blog-registry</module>
-        <module>blog-gateway</module>
         <module>blog-common</module>
-        <module>blog-search</module>
+        <module>blog-gateway</module>
         <module>blog-upload</module>
         <module>blog-user</module>
         <module>blog-listener</module>
@@ -91,7 +90,6 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

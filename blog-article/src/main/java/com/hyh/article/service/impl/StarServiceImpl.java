@@ -44,7 +44,7 @@ public class StarServiceImpl implements StarService {
         starBo.getStar().setTime(new Date());
         int result =  starMapper.insert(starBo.getStar());
         // 添加通知记录
-        Notice notice = new Notice(user.getId(), starBo.getUser().getId(),0,1,new Date());
+        Notice notice = new Notice(user.getId(), starBo.getUser().getId(),starBo.getStar().getArticleId(),0,1,new Date());
         int count = noticeMapper.insert(notice);
         if (count>0){
             // 封装通知 并发送

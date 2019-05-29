@@ -21,4 +21,6 @@ public interface UserService {
     int countUserByPhone(String phone);
 
     int updatePassword(Long id,String oldPassword, String newPassword);
+
+    String getUserNameById(Long id);
 }

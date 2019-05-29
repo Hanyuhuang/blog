@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 
-@CrossOrigin(value = "http://localhost:8080",allowCredentials = "true")
 @RestController
 @RequestMapping("/view")
 public class ViewController {

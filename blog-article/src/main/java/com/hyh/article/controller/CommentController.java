@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-@CrossOrigin(value = "http://localhost:8080",allowCredentials = "true")
 @RestController
 @RequestMapping("/comment")
 public class CommentController {

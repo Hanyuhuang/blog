@@ -13,6 +13,7 @@
     <artifactId>blog-gateway</artifactId>
 
     <dependencies>
+        <!-- API网关模块 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>

@@ -7,17 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="blog-search" />
+        <module name="blog-gateway" />
         <module name="blog-upload" />
         <module name="blog-user" />
         <module name="blogarticle" />
-        <module name="bloggateway" />
         <module name="bloglistener" />
         <module name="blogregistry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="blog-gateway" target="1.8" />
       <module name="blogarticleservice" target="1.8" />
+      <module name="bloggateway" target="1.8" />
       <module name="blogmessageservice" target="1.8" />
       <module name="blogservice" target="1.8" />
       <module name="bloguserservice" target="1.8" />
@@ -25,7 +26,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="blog-search" options="-parameters" />
+      <module name="blog-gateway" options="-parameters" />
       <module name="blog-upload" options="-parameters" />
       <module name="blog-user" options="-parameters" />
       <module name="blogarticle" options="-parameters" />
