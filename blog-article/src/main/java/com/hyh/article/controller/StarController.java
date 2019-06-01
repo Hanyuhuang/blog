@@ -30,7 +30,6 @@ public class StarController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             PageResult<ArticleVo> result = starService.listStars(pageCur,pageSize,user);
-            if (result.getItems().size()<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -72,7 +71,6 @@ public class StarController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = starService.deleteStarByArticleId(articleId,user);
-            if (result <1 ) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +90,6 @@ public class StarController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = starService.deleteStarsByArticleIds(ids,user);
-            if (result <1 ) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();

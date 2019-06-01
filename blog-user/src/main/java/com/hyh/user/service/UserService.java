@@ -1,10 +1,11 @@
 package com.hyh.user.service;
 
 import com.hyh.pojo.User;
+import com.hyh.pojo.Vo.UserVo;
 
 public interface UserService {
 
-    int saveUser(User user,String code);
+    int saveUser(UserVo userVo);
 
     int deleteUserById(Long id);
 
@@ -23,4 +24,8 @@ public interface UserService {
     int updatePassword(Long id,String oldPassword, String newPassword);
 
     String getUserNameById(Long id);
+
+    int updatePhone(UserVo userVo);
+
+    int updateEmail(UserVo userVo);
 }

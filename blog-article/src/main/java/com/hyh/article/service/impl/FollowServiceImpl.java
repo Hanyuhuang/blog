@@ -2,6 +2,7 @@ package com.hyh.article.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.hyh.article.client.UserClient;
 import com.hyh.article.mapper.ArticleMapper;
 import com.hyh.article.mapper.FollowMapper;
 import com.hyh.article.mapper.NoticeMapper;
@@ -16,6 +17,8 @@ import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -33,10 +36,16 @@ public class FollowServiceImpl implements FollowService {
     @Autowired
     private NoticeMapper noticeMapper;
     @Autowired
+    private UserClient userClient;
+    @Autowired
+    private RedisTemplate redisTemplate;
+    @Autowired
     private AmqpTemplate amqpTemplate;
 
     @Override
     public int insertFollow(FollowBo followBo,User user) {
+        // 删除缓存
+        redisTemplate.boundHashOps("article").delete(followBo.getFollow().getArticleId()+"");
         // 添加点赞记录
         followBo.getFollow().setUserId(user.getId());
         followBo.getFollow().setTime(new Date());
@@ -54,6 +63,8 @@ public class FollowServiceImpl implements FollowService {
 
     @Override
     public int deleteFollowByArticleId(Long articleId,User user) {
+        // 删除缓存
+        redisTemplate.boundHashOps("article").delete(articleId+"");
         Example example = new Example(Follow.class);
         example.createCriteria().andEqualTo("articleId",articleId).andEqualTo("userId",user.getId());
         return followMapper.deleteByExample(example);
@@ -74,7 +85,9 @@ public class FollowServiceImpl implements FollowService {
             // 查询文章
             Article article = articleMapper.selectByPrimaryKey(follow.getArticleId());
             articleVo.setArticle(article);
-            articleVo.setUser(user);
+            // 查询文章作者
+            ResponseEntity<User> author = userClient.getUserById(article.getUserId());
+            articleVo.setUser(author.getBody());
             return articleVo;
         }).collect(Collectors.toList());
         // 返回结果

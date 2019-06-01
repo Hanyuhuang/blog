@@ -1,9 +1,11 @@
 package com.hyh.user.service.impl;
 
 import com.hyh.pojo.User;
+import com.hyh.pojo.Vo.UserVo;
 import com.hyh.user.mapper.UserMapper;
 import com.hyh.user.service.UserService;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -28,14 +30,13 @@ public class UserServiceImpl implements UserService {
     /**
      * 用户注册
      * @param user  用户信息
-     * @param code  验证码
      * @return
      */
     @Override
-    public int saveUser(User user,String code) {
+    public int saveUser(UserVo user) {
         // 获取验证码 验证
         String realCode = (String) redisTemplate.boundValueOps(user.getEmail()).get();
-        if (realCode==null || realCode.length()!=6 || !code.equals(realCode)) return -1;
+        if (realCode==null || realCode.length()!=6 || !user.getCode().equals(realCode)) return 0;
         // MD5加密
         String password = user.getPassword();
         password = DigestUtils.md5DigestAsHex(password.getBytes());
@@ -150,6 +151,25 @@ public class UserServiceImpl implements UserService {
 
     public String getUserNameById(Long id){
         return userMapper.getUserNameById(id);
+    }
+
+    @Override
+    public int updatePhone(UserVo userVo) {
+        User user = new User();
+        user.setId(userVo.getId());
+        user.setPhone(userVo.getNewPhone());
+        return userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public int updateEmail(UserVo userVo) {
+        // 获取验证码 验证
+        String realCode = (String) redisTemplate.boundValueOps(userVo.getNewEmail()).get();
+        if (realCode==null || realCode.length()!=6 || !userVo.getCode().equals(realCode)) return 0;
+        User user = new User();
+        user.setId(userVo.getId());
+        user.setEmail(userVo.getNewEmail());
+        return userMapper.updateByPrimaryKeySelective(user);
     }
 
 }

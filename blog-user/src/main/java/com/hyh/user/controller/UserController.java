@@ -57,7 +57,42 @@ public class UserController {
     public ResponseEntity<Integer> checkEmail(@PathVariable("email") String email){
         try {
             int result =  userService.countUserByEmail(email);
-            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    /**
+     * 修改邮箱
+     * @param userVo
+     * @return
+     */
+    @PutMapping("/email")
+    public ResponseEntity<Integer> updateEmail(@RequestBody UserVo userVo,HttpSession session){
+        try {
+            User user = (User) session.getAttribute("user");
+            if (user==null) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            userVo.setId(user.getId());
+            int result =  userService.updateEmail(userVo);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    /**
+     * 修改手机
+     * @param userVo
+     * @return
+     */
+    @PutMapping("/phone")
+    public ResponseEntity<Integer> updatePhone(@RequestBody UserVo userVo,HttpSession session){
+        try {
+            User user = (User) session.getAttribute("user");
+            if (user==null) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            userVo.setId(user.getId());
+            int result =  userService.updatePhone(userVo);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -73,7 +108,6 @@ public class UserController {
     public ResponseEntity<Integer> checkPhone(@PathVariable("phone") String phone){
         try {
             int result =  userService.countUserByPhone(phone);
-            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -110,8 +144,8 @@ public class UserController {
     @GetMapping("/logout")
     public ResponseEntity logout(HttpSession session){
         try {
-           session.invalidate();
-           return ResponseEntity.ok(null);
+            session.removeAttribute("user");
+            return ResponseEntity.ok(null);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -137,10 +171,10 @@ public class UserController {
      * @param userVo
      * @return
      */
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<Integer> insertUser(@RequestBody UserVo userVo){
         try{
-            int result = userService.saveUser(userVo.getUser(),userVo.getCode());
+            int result = userService.saveUser(userVo);
             return ResponseEntity.ok(result);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -153,8 +187,11 @@ public class UserController {
      * @return
      */
     @PutMapping
-    public ResponseEntity<Integer> updateUser(@RequestBody User user){
+    public ResponseEntity<Integer> updateUser(@RequestBody User user,HttpSession session){
         try {
+            User curUser = (User) session.getAttribute("user");
+            if (curUser==null) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            user.setId(curUser.getId());
             int result = userService.updateUser(user);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
@@ -177,19 +214,4 @@ public class UserController {
         }
     }
 
-    /**
-     * 删除用户
-     * @param id
-     * @return
-     */
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Integer> deleteUserById(@PathVariable("id") Long id){
-        try {
-            int result = userService.deleteUserById(id);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

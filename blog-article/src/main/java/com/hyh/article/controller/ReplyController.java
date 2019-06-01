@@ -25,7 +25,21 @@ public class ReplyController {
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             reply.setUserId(user.getId());
             int result = replyService.insertReply(reply);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteReplyById(@PathVariable("id") Long id, HttpSession session){
+        try {
+            User user = (User) session.getAttribute("user");
+            // 用户未登录
+            if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            int result = replyService.deleteReplyById(id);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();

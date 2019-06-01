@@ -54,9 +54,9 @@ public class FollowController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = followService.insertFollow(followBo,user);
-            if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -73,7 +73,6 @@ public class FollowController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = followService.deleteFollowByArticleId(articleId,user);
-            if (result <1 ) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,7 +90,6 @@ public class FollowController {
         try {
             User user = (User) session.getAttribute("user");
             int result = followService.deleteFollowsByArticleIds(ids,user);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();

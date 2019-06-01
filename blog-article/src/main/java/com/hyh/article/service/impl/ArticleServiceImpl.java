@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
@@ -243,12 +245,30 @@ public class ArticleServiceImpl implements ArticleService {
     public int deleteArticleById(Long id) {
         // 删除缓存
         redisTemplate.boundHashOps("article").delete(id+"");
+        // 删除所有文章的点赞
+        Example starExample = new Example(Star.class);
+        starExample.createCriteria().andEqualTo("articleId",id);
+        starMapper.deleteByExample(starExample);
+        // 删除文章所有的收藏
+        Example followExample = new Example(Follow.class);
+        followExample.createCriteria().andEqualTo("articleId",id);
+        followMapper.deleteByExample(starExample);
+        // 删除文章所有的浏览
+        Example viewExample = new Example(View.class);
+        viewExample.createCriteria().andEqualTo("articleId",id);
+        viewMapper.deleteByExample(starExample);
         // 删除文章的所有评论
         Example commentExample = new Example(Comment.class);
         commentExample.createCriteria().andEqualTo("articleId",id);
-        // 删除所有评论的回复
-        Example replyExample = new Example(Reply.class);
-        replyExample.createCriteria().andEqualTo("articleId",id);
+        List<Comment> commentList = commentMapper.selectByExample(commentExample);
+        commentList.forEach(comment->{
+            // 删除该评论的所有回复
+            Example replyExample = new Example(Reply.class);
+            replyExample.createCriteria().andEqualTo("commentId",comment.getId());
+            replyMapper.deleteByExample(replyExample);
+            // 删除该评论
+            commentMapper.deleteByPrimaryKey(comment.getId());
+        });
         return articleMapper.deleteByPrimaryKey(id);
     }
 

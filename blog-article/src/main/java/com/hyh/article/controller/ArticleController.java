@@ -33,7 +33,6 @@ public class ArticleController {
             // 添加文章
             article.setUserId(user.getId());
             int result = articleService.saveArticle(article);
-            if (result <1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -73,7 +72,6 @@ public class ArticleController {
             User user = (User) session.getAttribute("user");
             // 查询文章详情
             ArticleVo result = articleService.getArticleDetail(id,user);
-            if (result==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,7 +87,6 @@ public class ArticleController {
     public ResponseEntity<PageResult<ArticleVo>> listArticles(Integer pageCur,Integer pageSize){
         try {
             PageResult<ArticleVo> result = articleService.listArticles(pageCur,pageSize);
-            if (result.getItems().size()<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,7 +102,6 @@ public class ArticleController {
     public ResponseEntity<PageResult<Article>> listHotArticles(){
         try {
             PageResult<Article> result = articleService.listHotArticles();
-            if (result.getItems().size()<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -123,7 +119,6 @@ public class ArticleController {
         try {
 
             Article result = articleService.getArticleById(id);
-            if (result == null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -139,7 +134,6 @@ public class ArticleController {
     public ResponseEntity<Integer> listHotArticles(@PathVariable("id") Long id){
         try {
             int result = articleService.deleteArticleById(id);
-            if (result <1 ) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,7 +154,6 @@ public class ArticleController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = articleService.updateArticle(article);
-            if (result <1 ) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();

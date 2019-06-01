@@ -41,7 +41,7 @@ public class MailListener {
         StringBuffer sb = new StringBuffer();
         sb.append("<h1>验证码</h1>")
                 .append("<br/>")
-                .append("<p>【博客】【用户注册】你好！你的验证码为：")
+                .append("<p>【博客】你好！你的验证码为：")
                 .append("<span style='color:red;font-size:30px'>"+code +"</span>")
                 .append(",5分钟内有效！</p>");
         helper.setText(sb.toString(), true);

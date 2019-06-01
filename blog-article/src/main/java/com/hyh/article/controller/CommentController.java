@@ -25,7 +25,20 @@ public class CommentController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = commentService.insertComment(commentBo,user);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.ok(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> deleteCommentById(@PathVariable("id") Long id, HttpSession session){
+        try {
+            User user = (User) session.getAttribute("user");
+            // 用户未登录
+            if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            int result = commentService.deleteCommentById(id);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();

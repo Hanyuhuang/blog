@@ -5,4 +5,6 @@ import com.hyh.pojo.Reply;
 public interface ReplyService {
 
     int insertReply(Reply reply);
+
+    int deleteReplyById(Long id);
 }

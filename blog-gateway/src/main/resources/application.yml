@@ -16,10 +16,25 @@ eureka:
 zuul:
   retryable: true
   ignored-services:
-    - listener-service # 忽略upload-service服务
+    - listener-service
   routes:
     user-service: /user/** # 这里是映射路径
     article-service: /article/**
     upload-service: /upload/**
   sensitive-headers: Access-Control-Allow-Origin
   ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+
+
+ribbon:
+  ConnectTimeout: 250 # 连接超时时间(ms)
+  ReadTimeout: 2000 # 通信超时时间(ms)
+  OkToRetryOnAllOperations: true # 是否对所有操作重试
+  MaxAutoRetriesNextServer: 1 # 同一服务不同实例的重试次数
+  MaxAutoRetries: 1 # 同一实例的重试次数
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms

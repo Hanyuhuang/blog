@@ -6,4 +6,6 @@ import com.hyh.pojo.User;
 public interface CommentService {
 
     int insertComment(CommentBo commentBo, User user);
+
+    int deleteCommentById(Long id);
 }

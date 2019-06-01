@@ -16,8 +16,6 @@ public interface ViewService {
 
     int deleteViewByArticleId(Long articleId,User user);
 
-    int deleteViewsByArticleId(Long[] ids,User user);
-
     int deleteAllViews(User user);
 
     PageResult<ArticleVo> listViews(Integer pageCur, Integer pageSize, User user);

@@ -70,7 +70,6 @@ public class ViewController {
                 }
                 result = viewService.updateView(view);
             }
-            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,23 +93,6 @@ public class ViewController {
         }
     }
 
-    /**
-     * 根据id批量删除浏览记录
-     * @param ids
-     * @return
-     */
-    @DeleteMapping
-    public ResponseEntity<Integer> deleteViewsByArticleId(Long[] ids,HttpSession session){
-        try {
-            User user = (User) session.getAttribute("user");
-            int result = viewService.deleteViewsByArticleId(ids,user);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 
     /**
      * 删除所有浏览记录
@@ -124,7 +106,6 @@ public class ViewController {
             // 用户未登录
             if (user==null) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             int result = viewService.deleteAllViews(user);
-            if (result < 1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

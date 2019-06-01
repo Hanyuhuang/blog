@@ -2,6 +2,7 @@ package com.hyh.article.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.hyh.article.client.UserClient;
 import com.hyh.article.mapper.ArticleMapper;
 import com.hyh.article.mapper.ViewMapper;
 import com.hyh.article.service.ViewService;
@@ -11,6 +12,7 @@ import com.hyh.pojo.View;
 import com.hyh.pojo.Vo.ArticleVo;
 import com.hyh.pojo.Vo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -24,6 +26,8 @@ public class ViewServiceImpl implements ViewService {
     private ViewMapper viewMapper;
     @Autowired
     private ArticleMapper articleMapper;
+    @Autowired
+    private UserClient userClient;
 
     @Override
     public View getViewByArticle(Long articleId, Long userId) {
@@ -51,14 +55,6 @@ public class ViewServiceImpl implements ViewService {
         return viewMapper.updateByExampleSelective(view,example);
     }
 
-    @Override
-    public int deleteViewsByArticleId(Long[] ids,User user) {
-        int count = 0;
-        for (Long id: ids) {
-            count += deleteViewByArticleId(id,user);
-        }
-        return count;
-    }
 
     @Override
     public int deleteAllViews(User user) {
@@ -67,7 +63,7 @@ public class ViewServiceImpl implements ViewService {
         List<View> list = viewMapper.selectByExample(example);
         int count = 0;
         for (View view: list) {
-            count += deleteViewByArticleId(view.getId(),user);
+            count += deleteViewByArticleId(view.getArticleId(),user);
         }
         return count;
     }
@@ -87,7 +83,9 @@ public class ViewServiceImpl implements ViewService {
             // 查询文章
             Article article = articleMapper.selectByPrimaryKey(view.getArticleId());
             articleVo.setArticle(article);
-            articleVo.setUser(user);
+            // 查询文章作者
+            ResponseEntity<User> author = userClient.getUserById(article.getUserId());
+            articleVo.setUser(author.getBody());
             return articleVo;
         }).collect(Collectors.toList());
         // 返回结果
