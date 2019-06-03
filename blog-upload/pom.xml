@@ -11,6 +11,7 @@
 
     <groupId>com.hyh</groupId>
     <artifactId>blog-upload</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!--Eureka-->
@@ -28,11 +29,30 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <!--FastDFS-->
-        <dependency>
+<!--        <dependency>
             <groupId>com.github.tobato</groupId>
             <artifactId>fastdfs-client</artifactId>
+        </dependency>-->
+            <!--  七牛云SDK -->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>pili-sdk-java</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.1.3</version>
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

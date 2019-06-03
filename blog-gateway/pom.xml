@@ -11,6 +11,7 @@
 
     <groupId>com.hyh</groupId>
     <artifactId>blog-gateway</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <!-- API网关模块 -->
@@ -29,4 +30,12 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -37,7 +37,7 @@ public class MailListener {
         helper.setTo(email);
         helper.setSubject("用户注册");
         // 产生6位随机验证码
-        int code = (int) (Math.random()*1000000);
+        int code = (int) ((Math.random()*9+1)*100000);
         StringBuffer sb = new StringBuffer();
         sb.append("<h1>验证码</h1>")
                 .append("<br/>")
@@ -49,4 +49,5 @@ public class MailListener {
         // 验证码放入redis中 有效期5分钟
         redisTemplate.boundValueOps(email).set(code+"",5, TimeUnit.MINUTES);
     }
+
 }

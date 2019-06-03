@@ -11,6 +11,7 @@
         <module name="blog-upload" />
         <module name="blog-user" />
         <module name="blogarticle" />
+        <module name="blogcommon" />
         <module name="bloglistener" />
         <module name="blogregistry" />
       </profile>
@@ -31,7 +32,7 @@
       <module name="blog-user" options="-parameters" />
       <module name="blogarticle" options="-parameters" />
       <module name="blogarticleservice" options="-parameters" />
-      <module name="blogcommon" options="" />
+      <module name="blogcommon" options="-parameters" />
       <module name="bloggateway" options="-parameters" />
       <module name="bloglistener" options="-parameters" />
       <module name="blogmessageservice" options="-parameters" />

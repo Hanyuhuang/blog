@@ -11,7 +11,7 @@
 
     <groupId>com.hyh</groupId>
     <artifactId>blog-common</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
