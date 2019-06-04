@@ -77,6 +77,7 @@ public class FollowServiceImpl implements FollowService {
         // 查询我的点赞列表
         Example example = new Example(Follow.class);
         example.createCriteria().andEqualTo("userId",user.getId());
+        example.setOrderByClause("time DESC");
         // 查询
         Page<Follow> followList = (Page<Follow>) followMapper.selectByExample(example);
         // 根据查询结果 封装文章Vo

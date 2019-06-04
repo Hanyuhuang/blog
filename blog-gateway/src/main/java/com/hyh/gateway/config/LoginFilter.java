@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Component
+//@Component
 public class LoginFilter extends ZuulFilter {
     @Override
     public String filterType() {

@@ -82,6 +82,7 @@ public class ArticleServiceImpl implements ArticleService {
             example.setOrderByClause(orderByClause);
         }
         example.createCriteria().andEqualTo("userId",user.getId());
+        example.setOrderByClause("create_time DESC");
         // 查询
         Page<Article> result = (Page<Article>) articleMapper.selectByExample(example);
         // 返回结果

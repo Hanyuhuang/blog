@@ -80,6 +80,7 @@ public class StarServiceImpl implements StarService {
         // 查询我的点赞列表
         Example example = new Example(Star.class);
         example.createCriteria().andEqualTo("userId",user.getId());
+        example.setOrderByClause("create_time DESC");
         // 查询
         Page<Star> starList = (Page<Star>) starMapper.selectByExample(example);
         // 根据查询结果 封装文章Vo

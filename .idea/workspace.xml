@@ -12,20 +12,11 @@
     <list default="true" id="e501ab35-16f2-4986-a781-edae6f134b30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-article/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-article/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-listener/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-listener/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/listener/MailListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/listener/MailListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-registry/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-upload/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-upload/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/config/UploadConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-upload/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-upload/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blog-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/blog-registry/target/" />
@@ -66,41 +57,59 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java">
+        <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/CorsConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+            <state relative-caret-position="306">
+              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#upload#0;class#UploadService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
+              <folding>
+                <element signature="method#listArticles#0;class#ArticleServiceImpl#0" />
+                <element signature="e#10909#10910#0" expanded="true" />
+                <element signature="e#10982#10983#0" expanded="true" />
+                <element signature="e#11042#11043#0" expanded="true" />
+                <element signature="e#11101#11102#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="302">
+              <caret line="77" column="53" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog-listener/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+            <state relative-caret-position="267">
+              <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/listener/MailListener.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+            <state relative-caret-position="189">
+              <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,7 +117,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
+            <state relative-caret-position="289">
               <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
             </state>
           </provider>
@@ -126,7 +135,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog-registry/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="340">
               <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
@@ -135,7 +144,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog-upload/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
+            <state relative-caret-position="527">
               <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
             </state>
           </provider>
@@ -144,14 +153,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/util/QiniuUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
+            <state relative-caret-position="3519">
               <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#961#962#0" expanded="true" />
                 <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#5902#5903#0" expanded="true" />
-                <element signature="e#5958#5959#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,22 +195,17 @@
         <option value="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/GatewayApplication.java" />
         <option value="$PROJECT_DIR$/blog-common/src/main/java/com/hyh/pojo/Vo/UserVo.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java" />
-        <option value="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/FollowController.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/StarController.java" />
         <option value="$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java" />
-        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java" />
-        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/CommentService.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/CommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ReplyController.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/ReplyService.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ReplyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/ViewService.java" />
         <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ViewController.java" />
         <option value="$PROJECT_DIR$/blog-common/pom.xml" />
@@ -224,6 +226,11 @@
         <option value="$PROJECT_DIR$/blog-upload/pom.xml" />
         <option value="$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java" />
         <option value="$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -290,6 +297,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,47 +306,10 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="blog-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,7 +358,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="Spring Boot.ArticleApplication">
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <module name="bloggateway" />
       <option name="VM_PARAMETERS" />
@@ -503,18 +475,18 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.ListenerApplication" />
+      <item itemvalue="Spring Boot.UploadApplication" />
       <item itemvalue="Spring Boot.UserApplication" />
       <item itemvalue="Spring Boot.ArticleApplication" />
-      <item itemvalue="Spring Boot.UploadApplication" />
       <item itemvalue="Spring Boot.RegistryApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GatewayApplication" />
-        <item itemvalue="Spring Boot.UserApplication" />
-        <item itemvalue="Spring Boot.RegistryApplication" />
         <item itemvalue="Spring Boot.ArticleApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.RegistryApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -552,16 +524,18 @@
       <workItem from="1559088508457" duration="6723000" />
       <workItem from="1559282393640" duration="21826000" />
       <workItem from="1559444584255" duration="12449000" />
+      <workItem from="1559551605262" duration="1420000" />
+      <workItem from="1559568072475" duration="2933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190386000" />
+    <option name="totallyTimeSpent" value="194739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49369746" visible="true" weight="0.33619457" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49369746" visible="true" weight="0.34620887" />
       <window_info id="Structure" order="1" sideWeight="0.50630254" side_tool="true" weight="0.3319027" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -588,7 +562,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.3297568" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.3297568" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
@@ -675,16 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -699,16 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="155" column="63" selection-start-line="155" selection-start-column="63" selection-end-line="155" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="140" column="21" lean-forward="true" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -739,23 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -817,25 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="213" column="25" selection-start-line="213" selection-start-column="25" selection-end-line="213" selection-end-column="25" />
-          <folding>
-            <element signature="method#listArticles#0;class#ArticleServiceImpl#0" />
-            <element signature="e#9952#9953#0" expanded="true" />
-            <element signature="e#10025#10026#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/controller/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
@@ -860,12 +778,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-registry/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/blog-registry/src/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/blog-article/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -905,34 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/CorsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/config/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/util/QiniuUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#5902#5903#0" expanded="true" />
-            <element signature="e#5958#5959#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -943,9 +833,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/config/UploadConfig.java" />
+    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="53" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/listener/MailListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/LoginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-user/src/main/java/com/hyh/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/controller/UploadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="289">
           <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
         </state>
       </provider>
@@ -959,54 +901,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-registry/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="340">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog-upload/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="527">
           <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/service/UploadService.java">
+    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/util/QiniuUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+        <state relative-caret-position="3519">
+          <caret line="221" column="9" selection-start-line="221" selection-start-column="9" selection-end-line="221" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#upload#0;class#UploadService#0" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog-upload/src/main/java/com/hyh/upload/config/UploadConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="53" lean-forward="true" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog-listener/src/main/java/com/hyh/listener/listener/MailListener.java">
+    <entry file="file://$PROJECT_DIR$/blog-gateway/src/main/java/com/hyh/gateway/config/CorsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/StarServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="82" column="53" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/FollowServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ViewServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="77" column="53" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog-article/src/main/java/com/hyh/article/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
+          <folding>
+            <element signature="method#listArticles#0;class#ArticleServiceImpl#0" />
+            <element signature="e#10909#10910#0" expanded="true" />
+            <element signature="e#10982#10983#0" expanded="true" />
+            <element signature="e#11042#11043#0" expanded="true" />
+            <element signature="e#11101#11102#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

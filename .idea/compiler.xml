@@ -17,7 +17,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="blog-gateway" target="1.8" />
       <module name="blogarticleservice" target="1.8" />
       <module name="bloggateway" target="1.8" />
       <module name="blogmessageservice" target="1.8" />

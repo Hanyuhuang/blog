@@ -75,6 +75,7 @@ public class ViewServiceImpl implements ViewService {
         // 查询我浏览的记录 并且状态为1的
         Example example = new Example(View.class);
         example.createCriteria().andEqualTo("userId",user.getId()).andEqualTo("status",1);
+        example.setOrderByClause("create_time DESC");
         // 查询
         Page<View> viewList = (Page<View>) viewMapper.selectByExample(example);
         // 根据查询结果 封装文章Vo
