@@ -92,6 +92,7 @@ public class UserServiceImpl implements UserService {
         // MD5加密
         password = DigestUtils.md5DigestAsHex(password.getBytes());
         User user = userMapper.getUserByLoginName(loginName,password);
+        System.out.println(user);
         if (user!=null) user.setPassword(null);
         return user;
     }

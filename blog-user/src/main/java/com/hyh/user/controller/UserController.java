@@ -125,9 +125,10 @@ public class UserController {
     public ResponseEntity<User> getUserByLoginName(@RequestParam String loginName,@RequestParam String password,
                 HttpSession session){
         try {
+            System.out.println(loginName+""+password);
             User user =  userService.getUserByLoginName(loginName,password);
             // 用户不存在
-            if (user==null) new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            if (user==null) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             // 放入session
             session.setAttribute("user",user);
             return ResponseEntity.ok(user);
