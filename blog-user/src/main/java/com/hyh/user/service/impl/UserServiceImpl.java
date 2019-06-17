@@ -102,7 +102,7 @@ public class UserServiceImpl implements UserService {
      * @param email 用户邮箱
      */
     @Override
-    public void getCode(String email) {
+    public void sendCode(String email) {
         // 放入消息队列 发送邮件
         amqpTemplate.convertAndSend("blog-email-code-exchange","email.code",email);
     }

@@ -15,7 +15,7 @@ public interface UserService {
 
     User getUserByLoginName(String loginName, String password);
 
-    void getCode(String email);
+    void sendCode(String email);
 
     int countUserByEmail(String email);
 

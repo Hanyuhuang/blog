@@ -158,9 +158,9 @@ public class UserController {
      * @return
      */
     @GetMapping("/code")
-    public ResponseEntity<Integer> getCode(String email){
+    public ResponseEntity<Integer> sendCode(String email){
         try{
-            userService.getCode(email);
+            userService.sendCode(email);
             return  ResponseEntity.ok(null);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -176,6 +176,7 @@ public class UserController {
     public ResponseEntity<Integer> insertUser(@RequestBody UserVo userVo){
         try{
             int result = userService.saveUser(userVo);
+            if (result<1) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             return ResponseEntity.ok(result);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
