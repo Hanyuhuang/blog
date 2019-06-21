@@ -7,16 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="blog-gateway" />
+        <module name="blog-article" />
+        <module name="blog-common" />
+        <module name="blog-listener" />
+        <module name="blog-registry" />
         <module name="blog-upload" />
         <module name="blog-user" />
         <module name="blogarticle" />
         <module name="blogcommon" />
         <module name="bloglistener" />
         <module name="blogregistry" />
+        <module name="blogzuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="blog-gateway" target="1.8" />
       <module name="blogarticleservice" target="1.8" />
       <module name="bloggateway" target="1.8" />
       <module name="blogmessageservice" target="1.8" />
@@ -26,7 +31,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blog-article" options="-parameters" />
+      <module name="blog-common" options="-parameters" />
       <module name="blog-gateway" options="-parameters" />
+      <module name="blog-listener" options="-parameters" />
+      <module name="blog-registry" options="-parameters" />
       <module name="blog-upload" options="-parameters" />
       <module name="blog-user" options="-parameters" />
       <module name="blogarticle" options="-parameters" />
@@ -38,6 +47,7 @@
       <module name="blogregistry" options="-parameters" />
       <module name="blogservice" options="-parameters" />
       <module name="bloguserservice" options="-parameters" />
+      <module name="blogzuul" options="-parameters" />
     </option>
   </component>
 </project>
