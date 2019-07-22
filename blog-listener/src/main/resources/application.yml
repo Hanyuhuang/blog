@@ -9,7 +9,7 @@ spring:
   mail:
     host: smtp.qq.com
     username: 577661890@qq.com
-    password: ssfdajfxlkorbchf
+    password: your password
   rabbitmq:
     host: 127.0.0.1
 

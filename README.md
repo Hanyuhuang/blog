@@ -13,7 +13,7 @@
 
 #### 启动blog-register项目中RegisterApplication的Main方法
 
-#### 启动blog-gateway项目中GatewayApplication的Main方法
+#### 启动blog-zuul项目中GatewayApplication的Main方法
 
 #### 启动blog-user项目中UserApplication的Main方法
 
